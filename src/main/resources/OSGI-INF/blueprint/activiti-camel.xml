@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<blueprint xmlns="http://www.osgi.org/xmlns/blueprint/v1.0.0"
+           xmlns:camel="http://camel.apache.org/schema/blueprint">
+    
+    <camelContext id="camelContext" xmlns="http://camel.apache.org/schema/blueprint">
+        <packageScan>
+<!-- 			<package>org.bpmintegrationpaper.input.file</package> -->
+<!-- 			<package>org.bpmintegrationpaper.input.mail</package> -->
+			<package>org.bpmintegrationpaper.input.soap</package>
+			<package>org.bpmintegrationpaper.input.bpm</package>
+			<package>org.bpmintegrationpaper.taskservice.queue</package>
+		</packageScan>
+    </camelContext>    
+    <reference id="runtimeService" interface="org.activiti.engine.RuntimeService"/>
+    <service interface="org.activiti.camel.ContextProvider">
+        <bean class="org.activiti.camel.SimpleContextProvider">
+            <argument value="ReceiveDocumentProcess"/>
+            <argument ref="camelContext"/>
+        </bean>
+    </service>
+</blueprint>
