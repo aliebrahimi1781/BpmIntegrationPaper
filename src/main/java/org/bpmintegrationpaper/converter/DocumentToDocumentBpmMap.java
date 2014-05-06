@@ -4,7 +4,6 @@ import org.apache.camel.Converter;
 import org.apache.camel.Exchange;
 import org.bpmintegrationpaper.dto.DocumentBpmDto;
 import org.bpmintegrationpaper.dto.DocumentDto;
-import org.slf4j.LoggerFactory;
 
 /**
  * @author Ramon Rosa da Silva (neoramon@gmail.com)
@@ -12,9 +11,6 @@ import org.slf4j.LoggerFactory;
  */
 @Converter
 public final class DocumentToDocumentBpmMap {
-
-    private static final org.slf4j.Logger LOG = LoggerFactory
-            .getLogger(DocumentToDocumentBpmMap.class);
 
     /**
      * Constructor.

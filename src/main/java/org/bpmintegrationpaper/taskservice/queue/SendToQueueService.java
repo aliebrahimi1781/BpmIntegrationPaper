@@ -10,9 +10,11 @@ public class SendToQueueService extends AbstractRouteBuilder {
 
     @Override
     public void configure() throws Exception {
-        from(
-                "activiti:ReceiveDocumentProcess:convertFromJson?copyVariablesToProperties=true&copyVariablesToBodyAsMap=true")
-                .log("${body}");
+	from(
+		"activiti:ReceiveDocumentProcess:convertFromJson"
+			+ "?copyVariablesToProperties=true"
+			+ "&copyVariablesToBodyAsMap=true")
+			.log("${body}");
     }
 
 }

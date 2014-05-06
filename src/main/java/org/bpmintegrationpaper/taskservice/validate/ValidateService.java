@@ -55,7 +55,6 @@ public class ValidateService implements JavaDelegate {
             byte[] buff = null;
             try {
                 fis = new FileInputStream(file);
-                // TODO set correct size.
                 buff = new byte[readBytes];
                 fis.read(buff);
             } finally {
