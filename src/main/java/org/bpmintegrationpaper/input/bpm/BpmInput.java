@@ -10,7 +10,7 @@ import org.bpmintegrationpaper.dto.DocumentBpmDto;
 public class BpmInput extends AbstractRouteBuilder {
     @Override
     public final void configure() throws Exception {
-	from(mekeQueue("bpm.send"))
+	from(mekeQueue("bpm.send")).id("BpmInput")
 	.convertBodyTo(DocumentBpmDto.class)
 		.to("activiti:ReceiveDocumentProcess?"
 			+ "copyVariablesToBodyAsMap=true"

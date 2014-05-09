@@ -21,12 +21,13 @@ public class DocumentBpmDto extends HashMap<String, Object> {
      *            Document Bpm Variables.
      */
     public DocumentBpmDto(final Map<String, Object> variables) {
-        this.setDocType(variables.get("docType"));
-        this.setFilePath(variables.get("filePath"));
-        this.setFormat(variables.get("format"));
-        this.setNote(variables.get("note"));
-        this.setPassword(variables.get("password"));
-        this.setUser(variables.get("user"));
+	this.setDocType(variables.get("docType"));
+	this.setFilePath(variables.get("filePath"));
+	this.setFormat(variables.get("format"));
+	this.setNote(variables.get("note"));
+	this.setPassword(variables.get("password"));
+	this.setUser(variables.get("user"));
+	this.setIsAuthenticated((Boolean) variables.get("isAuthenticate"));
     }
 
     /**
@@ -42,7 +43,7 @@ public class DocumentBpmDto extends HashMap<String, Object> {
      *            .
      */
     public void setUser(final Object user) {
-        this.put("user", user);
+	this.put("user", user);
     }
 
     /**
@@ -51,7 +52,7 @@ public class DocumentBpmDto extends HashMap<String, Object> {
      * @return .
      */
     public Object getUser() {
-        return this.get("user");
+	return this.get("user");
     }
 
     /**
@@ -61,7 +62,7 @@ public class DocumentBpmDto extends HashMap<String, Object> {
      *            .
      */
     public void setPassword(final Object password) {
-        this.put("passwrod", password);
+	this.put("passwrod", password);
     }
 
     /**
@@ -70,7 +71,7 @@ public class DocumentBpmDto extends HashMap<String, Object> {
      * @return .
      */
     public Object getPassword() {
-        return this.get("password");
+	return this.get("password");
     }
 
     /**
@@ -80,7 +81,7 @@ public class DocumentBpmDto extends HashMap<String, Object> {
      *            .
      */
     public void setDocType(final Object docType) {
-        this.put("docType", docType);
+	this.put("docType", docType);
     }
 
     /**
@@ -89,7 +90,7 @@ public class DocumentBpmDto extends HashMap<String, Object> {
      * @return .
      */
     public Object getDocType() {
-        return this.get("docType");
+	return this.get("docType");
     }
 
     /**
@@ -99,7 +100,7 @@ public class DocumentBpmDto extends HashMap<String, Object> {
      *            .
      */
     public void setFormat(final Object format) {
-        this.put("format", format);
+	this.put("format", format);
     }
 
     /**
@@ -108,7 +109,7 @@ public class DocumentBpmDto extends HashMap<String, Object> {
      * @return .
      */
     public Object getFormat() {
-        return this.get("format");
+	return this.get("format");
     }
 
     /**
@@ -118,7 +119,7 @@ public class DocumentBpmDto extends HashMap<String, Object> {
      *            .
      */
     public void setFilePath(final Object filePath) {
-        this.put("filePath", filePath);
+	this.put("filePath", filePath);
     }
 
     /**
@@ -127,7 +128,7 @@ public class DocumentBpmDto extends HashMap<String, Object> {
      * @return .
      */
     public Object getFilePath() {
-        return this.get("filePath");
+	return this.get("filePath");
     }
 
     /**
@@ -137,7 +138,7 @@ public class DocumentBpmDto extends HashMap<String, Object> {
      *            .
      */
     public void setNote(final Object note) {
-        this.put("note", note);
+	this.put("note", note);
     }
 
     /**
@@ -146,6 +147,26 @@ public class DocumentBpmDto extends HashMap<String, Object> {
      * @return .
      */
     public Object getNote() {
-        return this.get("note");
+	return this.get("note");
     }
+
+    /**
+     * Set if user is authenticated.
+     * 
+     * @param isAuthenticated
+     *            Boolean value.
+     */
+    public void setIsAuthenticated(final Boolean isAuthenticated) {
+	super.put("isAuthenticated", isAuthenticated);
+    }
+
+    /**
+     * get if user is authenticated.
+     * 
+     * @return Boolean
+     */
+    public Boolean isAutenticated() {
+	return (Boolean) super.get("isAuthenticated");
+    }
+
 }
